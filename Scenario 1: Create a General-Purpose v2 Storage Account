@@ -13,3 +13,11 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
     -SkuName Standard_LRS `
     -Kind StorageV2 `
     -Location $location
+
+# Cleanup
+# Remove the Storage Account
+Remove-AzStorageAccount -ResourceGroupName $resourceGroup -Name $storageAccountName -Force
+
+# Remove the Resource Group
+Remove-AzResourceGroup -Name $resourceGroup -Force
+
